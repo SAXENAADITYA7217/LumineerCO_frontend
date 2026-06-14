@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import UserNavbar from "../components/user/UserNavbar";
-import UserSidebar from "../components/user/UserSidebar";
+
 import AdminNavbar from "../components/admin/AdminNavbar.jsx";
 import AdminSidebar from "../components/admin/AdminSideBar.jsx";
 
