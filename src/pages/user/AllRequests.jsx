@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 import { AppContext } from "../../context/AppContext";
 import RepairRequestCard from "../../components/user/dashboard/RepairRequestCard";
@@ -10,6 +11,7 @@ const AllRequests = () => {
 
     const [requests, setRequests] = useState([]);
     const [loading, setLoading] = useState(true);
+
 
     const fetchRequests = async () => {
         try {

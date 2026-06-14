@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 import { AppContext } from "../../context/AppContext";
 
@@ -11,10 +12,12 @@ const DashBoard = () => {
 
     const { backendURL } = useContext(AppContext);
 
+
     const [requests, setRequests] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchRequests = async () => {
+        axios.defaults.withCredentials = true;
 
         try {
 

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+axios.defaults.withCredentials = true;
 import { AppContext } from "../../context/AppContext";
 import UpdateStatusModal from "../../components/admin/UpdateStatusModal.jsx";
 

@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import axios from "axios";
+axios.defaults.withCredentials = true;
 import { toast } from "react-toastify";
 import { AppContext } from "../../context/AppContext.jsx";
 import {useNavigate} from "react-router-dom";
