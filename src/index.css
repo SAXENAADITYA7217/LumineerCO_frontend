@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  box-sizing : border-box;
+  margin : 0;
+  padding : 0;
+  font-family : 'Outfit', sans-serif;
+}
+.transition-all {
+  transition: all 0.25s ease-in-out;
+}
+
+.hover-primary:hover {
+  background-color: #e0e7ff !important;
+  color: #4f46e5 !important;
+}
+
+.hover-danger:hover {
+  background-color: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+.hover-scale:hover {
+  transform: translateY(-1px);
+}
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.form-control:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
