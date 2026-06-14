@@ -4,10 +4,11 @@ import axios from "axios";
 import {toast} from "react-toastify";
 axios.defaults.withCredentials = true;
 
+
 export const AppContext = createContext();
 
 export const AppContextProvider = (props)=>{
-    axios.defaults.withCredentials = true;
+
 
     const backendURL = AppConstants.BACKEND_URL;
     const [isLoggedIn, setIsLoggedIn] = useState(false);
