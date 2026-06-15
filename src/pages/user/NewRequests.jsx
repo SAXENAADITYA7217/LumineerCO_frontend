@@ -8,6 +8,7 @@ import {useNavigate} from "react-router-dom";
 const NewRequests = () => {
     const { backendURL } = useContext(AppContext);
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         laptopBrand: "",
@@ -45,6 +46,7 @@ const NewRequests = () => {
             toast.error("Please enter a valid 10 digit mobile number");
             return;
         }
+        setLoading(true);
 
         try {
             const response = await axios.post(
@@ -72,6 +74,9 @@ const NewRequests = () => {
                 error.response?.data?.message ||
                 "Failed to submit repair request"
             );
+        }
+        finally {
+            setLoading(false);
         }
     };
 
@@ -195,10 +200,10 @@ const NewRequests = () => {
                             />
                         </div>
 
-                        {/* Submit Button */}
                         <button
                             type="submit"
-                            className="btn text-white fw-bold px-5 py-3"
+                            disabled={loading}
+                            className="btn text-white fw-bold px-5 py-3 d-flex align-items-center justify-content-center"
                             style={{
                                 background:
                                     "linear-gradient(135deg, #A855F7, #6D28D9)",
@@ -206,9 +211,21 @@ const NewRequests = () => {
                                 borderRadius: "14px",
                                 boxShadow:
                                     "0 10px 25px rgba(124,58,237,0.3)",
+                                minWidth: "220px",
                             }}
                         >
-                            Submit Request 🚀
+                            {loading ? (
+                                <>
+            <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+            ></span>
+                                    Submitting...
+                                </>
+                            ) : (
+                                "Submit Request 🚀"
+                            )}
                         </button>
                     </form>
                 </div>
